@@ -119,7 +119,7 @@
                         </group>
                     </group>
                     <label for="name"/>
-                    <field name="name" readonly="1"/>
+                    <field name="name" readonly="0"/>
                 </form>
             </field>
         </record>
