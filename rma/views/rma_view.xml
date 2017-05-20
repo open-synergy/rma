@@ -185,6 +185,11 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet string="RMA">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
                     <div class="oe_button_box oe_right">
                         <button type="object"  name="action_view_in_shipments"
                                 class="oe_stat_button"
@@ -228,11 +233,6 @@
                             <field name="supplier_line_count" widget="statinfo"
                                    string="Rel. RMA Lines"/>
                         </button>
-                    </div>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
                     </div>
                     <group>
                         <field name="partner_id"
@@ -335,6 +335,11 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet string="RMA">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
                     <div class="oe_button_box oe_right">
                         <button type="object"  name="action_view_in_shipments"
                                 class="oe_stat_button"
@@ -371,11 +376,6 @@
                             <field name="line_count" widget="statinfo"
                                    string="RMA Lines"/>
                         </button>
-                    </div>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
                     </div>
                     <group>
                         <field name="partner_id"
