@@ -687,8 +687,6 @@ class RmaOrderLine(models.Model):
 
     @api.onchange('product_id')
     def _onchange_product_id(self):
-        if not self.invoice_id:
-            return
         self.name = self.product_id.partner_ref
         self.operation_id = self.product_id.categ_id.rma_operation_id.id
 
