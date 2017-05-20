@@ -95,7 +95,7 @@ class RmaMakePicking(models.TransientModel):
             else:
                 seller = line.product_id.seller_ids.filtered(
                     lambda p: p.name == line.invoice_line_id.invoice_id.
-                        partner_id)
+                    partner_id)
                 partner = seller.warranty_return_address
                 delivery_address = partner.id
         return delivery_address

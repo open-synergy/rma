@@ -555,7 +555,7 @@ class RmaOrderLine(models.Model):
     move_count = fields.Integer(compute=_compute_move_count,
                                 string='# of Moves', copy=False, default=0)
     name = fields.Text(
-        string='Description', 
+        string='Description',
         required=True,
         readonly=True,
         states={'draft': [('readonly', False)]},
@@ -573,8 +573,8 @@ class RmaOrderLine(models.Model):
                                       ondelete='restrict',
                                       index=True)
     supplier_inv_line_id = fields.Many2one('account.invoice.line',
-                                      string='Related invoice',
-                                      ondelete='restrict')
+                                           string='Related invoice',
+                                           ondelete='restrict')
     refund_line_id = fields.Many2one('account.invoice.line',
                                      string='Refund Line',
                                      ondelete='restrict',
@@ -597,7 +597,7 @@ class RmaOrderLine(models.Model):
                                  states={'draft': [('readonly', False)]},
                                  ondelete='restrict')
     price_unit = fields.Float(string='Price Unit', readonly=True,
-                                 states={'draft': [('readonly', False)]})
+                              states={'draft': [('readonly', False)]})
     move_ids = fields.One2many('stock.move', 'rma_id',
                                string='Stock Moves', readonly=True,
                                states={'draft': [('readonly', False)]},
