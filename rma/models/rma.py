@@ -150,11 +150,6 @@ class RmaOrder(models.Model):
         self.supplier_line_count = len(related_lines)
 
     @api.one
-    def _compute_supplier_line_count(self):
-        self.supplier_line_count = len(
-            self.env['rma.order.line'].search([('origin', '=', self.name)]))
-
-    @api.one
     def _compute_line_count(self):
         self.line_count = len(self.rma_line_ids.filtered(
             lambda p: p.warranty_state != 'expired'))
