@@ -130,13 +130,14 @@
             <field name="arch" type="xml">
                 <tree decoration-info="state == 'draft'"
                       decoration-muted="state== 'done'" string="RMA">
-                    <field name="state"/>
+                    <field name="name" string="# RMA"/>
                     <field name="reference"/>
                     <field name="partner_id" groups="base.group_user" string="Customer"/>
                     <field name="requested_by" groups="base.group_user"/>
                     <field name="assigned_to" groups="base.group_user"/>
                     <field name="date_rma"/>
-                    <field name="type"/>
+                    <field name="type" invisible="1"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -147,14 +148,15 @@
             <field name="arch" type="xml">
                 <tree decoration-info="state == 'draft'"
                       decoration-muted="state== 'done'" string="RMA">
-                    <field name="state" invisible="True"/>
+                    <field name="name" string="# RMA"/>
                     <field name="reference"/>
                     <field name="partner_id" groups="base.group_user"
                            string="Supplier"/>
                     <field name="requested_by" groups="base.group_user"/>
                     <field name="assigned_to" groups="base.group_user"/>
                     <field name="date_rma"/>
-                    <field name="type"/>
+                    <field name="type" invisible="1"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
