@@ -527,26 +527,6 @@ class RmaOrderLine(models.Model):
             move_list.append(move.id)
         self.move_count = len(list(set(move_list)))
 
-    @api.model
-    def _default_dest_location_id(self):
-        if self.rma_id.warehouse_id.lot_rma_id:
-            return self.rma_id.warehouse_id.lot_rma_id.id
-        else:
-            return False
-
-    @api.model
-    def _default_src_location_id(self):
-        if self.type == 'customer':
-            if self.rma_id.partner_id.property_stock_customer:
-                return lines.rma_id.partner_id.property_stock_customer.id
-            else:
-                return False
-        else:
-            if self.rma_id.partner_id.property_stock_supplier:
-                return lines.rma_id.partner_id.property_stock_supplier.id
-            else:
-                return False
-
     @api.one
     @api.depends('invoice_line_id')
     def _compute_warranty(self):
