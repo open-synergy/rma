@@ -78,6 +78,8 @@ class RmaOrder(models.Model):
                                  default=lambda self: self.env.user.company_id)
     rma_line_ids = fields.One2many('rma.order.line', 'rma_id',
                                    string='RMA lines',
+                                   readonly=True,
+                                   states={'draft': [('readonly', False)]},
                                    copy=False)
     warehouse_id = fields.Many2one('stock.warehouse', string='Warehouse',
                                    required=True, readonly=True,
