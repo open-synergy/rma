@@ -614,7 +614,7 @@ class RmaOrderLine(models.Model):
     uom_id = fields.Many2one('product.uom', string='Unit of Measure')
     product_id = fields.Many2one('product.product', string='Product',
                                  ondelete='restrict')
-    price_unit = fields.Monetary(string='Price Unit', readonly=True,
+    price_unit = fields.Float(string='Price Unit', readonly=True,
                                  states={'draft': [('readonly', False)]})
     move_ids = fields.One2many('stock.move', 'rma_id',
                                string='Stock Moves', readonly=True,
