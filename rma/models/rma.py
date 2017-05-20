@@ -576,7 +576,12 @@ class RmaOrderLine(models.Model):
 
     move_count = fields.Integer(compute=_compute_move_count,
                                 string='# of Moves', copy=False, default=0)
-    name = fields.Text(string='Description', required=True)
+    name = fields.Text(
+        string='Description', 
+        required=True,
+        readonly=True,
+        states={'draft': [('readonly', False)]},
+        )
     origin = fields.Char(string='Source Document',
                          help="Reference of the document that produced "
                               "this rma.")
@@ -610,6 +615,8 @@ class RmaOrderLine(models.Model):
                              ondelete='cascade')
     uom_id = fields.Many2one('product.uom', string='Unit of Measure')
     product_id = fields.Many2one('product.product', string='Product',
+                                 readonly=True,
+                                 states={'draft': [('readonly', False)]},
                                  ondelete='restrict')
     price_unit = fields.Float(string='Price Unit', readonly=True,
                                  states={'draft': [('readonly', False)]})
