@@ -67,7 +67,7 @@
             <field name="model">rma.order.line</field>
             <field name="arch" type="xml">
                 <form string="Rma Line">
-                    <div class="oe_button_box">
+                    <div class="oe_button_box oe_right">
                         <button type="object"  name="action_view_moves"
                                 class="oe_stat_button"
                                 icon="fa-truck">
@@ -184,7 +184,7 @@
                     <field name="state" widget="statusbar" nolabel="1"/>
                 </header>
                 <sheet string="RMA">
-                    <div class="oe_button_box">
+                    <div class="oe_button_box oe_right">
                         <button type="object"  name="action_view_in_shipments"
                                 class="oe_stat_button"
                                 icon="fa-truck"
@@ -335,7 +335,7 @@
                     <field name="state" widget="statusbar" nolabel="1"/>
                 </header>
                 <sheet string="RMA">
-                    <div class="oe_button_box">
+                    <div class="oe_button_box oe_right">
                         <button type="object"  name="action_view_in_shipments"
                                 class="oe_stat_button"
                                 icon="fa-truck"
